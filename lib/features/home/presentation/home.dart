@@ -2,8 +2,7 @@ import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/core/utils/status_bar_color.dart';
-
-import '../../web_view/custom_web_view.dart';
+import 'package:portfolio/features/home/presentation/widgets/personal.dart';
 
 @RoutePage()
 class HomePage extends ConsumerStatefulWidget {
@@ -28,8 +27,6 @@ class _HomeState extends ConsumerState<HomePage> {
   }
 
   Widget _buildContent() {
-    return CustomWebView(
-      webUrl: "https://flutter.dev/",
-    );
+    return Personal();
   }
 }
