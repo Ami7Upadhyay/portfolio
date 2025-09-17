@@ -1,12 +1,37 @@
-import 'package:flutter/material.dart';
+import 'dart:convert';
 
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
+
+import '../../../../core/models/skill_category.dart';
 import '../../../../shared/widgets/skill_box.dart';
 import '../../../../shared/widgets/title_header.dart';
 
 final skillsKey = GlobalKey();
 
-class Skills extends StatelessWidget {
-  const Skills({super.key});
+class TechnicalSkills extends StatefulWidget {
+  const TechnicalSkills({super.key});
+
+  @override
+  State<TechnicalSkills> createState() => _SkillsState();
+}
+
+class _SkillsState extends State<TechnicalSkills> {
+  List<Skills> skillsCat = [];
+
+  @override
+  void initState() {
+    loadSkills();
+    super.initState();
+  }
+
+  loadSkills() async {
+    final String jsonString =
+        await rootBundle.loadString('assets/json/skills.json');
+    final SkillCategory skillsModel =
+        SkillCategory.fromJson(json.decode(jsonString));
+    skillsCat = skillsModel.skills ?? [];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +51,13 @@ class Skills extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TitleHeader(title: 'skill'),
-        SkillsBox(
-          title: 'Skills',
-          skills: ['Flutter', 'Dart', 'Firebase', 'REST API', 'UI/UX'],
-        )
+        Wrap(
+            spacing: 16,
+            runSpacing: 10,
+            children: skillsCat
+                .map((c) =>
+                    SkillsTable(header: c.header ?? '', skills: c.skills ?? []))
+                .toList())
       ],
     );
   }

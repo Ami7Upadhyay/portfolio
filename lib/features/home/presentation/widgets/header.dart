@@ -3,9 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/core/theme/app_colors.dart';
 import 'package:portfolio/core/utils/extensions/padding_extenstion.dart';
 
-import '../../../../core/constants/app_images.dart';
-import '../../../../shared/widgets/image.dart';
-
 final headerKey = GlobalKey();
 
 class Header extends ConsumerStatefulWidget {
@@ -24,8 +21,9 @@ class _HeaderState extends ConsumerState<Header> {
       child: Row(
         children: [
           Flexible(flex: 2, child: _buildContent()),
-          Spacer(),
-          Flexible(child: AppImageProvider.assets(AppImages.headerImg))
+          // Spacer(),
+          // Flexible(child: AppImageProvider.assets(AppImages.headerImg))
+          // Flexible(child: AppImageProvider.lottieAsset(AppImages.waving))
         ],
       ),
     );

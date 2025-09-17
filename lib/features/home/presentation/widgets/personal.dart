@@ -6,6 +6,7 @@ import 'package:portfolio/shared/widgets/image.dart';
 
 import '../../../../core/constants/app_images.dart';
 import 'about_me.dart';
+import 'contact.dart';
 import 'header.dart';
 
 class Personal extends ConsumerStatefulWidget {
@@ -16,6 +17,14 @@ class Personal extends ConsumerStatefulWidget {
 }
 
 class _PersonalState extends ConsumerState<Personal> {
+  Map<String, dynamic> menuItems = {
+    '#home': headerKey,
+    '#about-me': aboutMeKey,
+    '#skill': skillsKey,
+    '#projects': skillsKey,
+    '#contacts': contactsKey,
+  };
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,10 +38,12 @@ class _PersonalState extends ConsumerState<Personal> {
               child: Column(
                 children: [
                   Header(),
-                  106.vPad,
+                  50.vPad,
                   AboutMe(),
-                  106.vPad,
-                  Skills(),
+                  50.vPad,
+                  TechnicalSkills(),
+                  50.vPad,
+                  Contacts()
                 ],
               ),
             ))
@@ -60,29 +71,16 @@ class _PersonalState extends ConsumerState<Personal> {
           ],
         ),
         Row(
-          children: [
-            menuBtn("home"),
-            menuBtn("about me"),
-            menuBtn("skill"),
-            menuBtn("projects"),
-            menuBtn("contact")
-          ],
-        )
+            children: menuItems.entries
+                .map((element) => menuBtn(element.key, element.value))
+                .toList())
       ],
     );
   }
 
-  Widget menuBtn(String title) {
+  Widget menuBtn(String title, dynamic key) {
     return TextButton(
-        onPressed: () {
-          if (title == 'home') {
-            scrollToSection(headerKey);
-          } else if (title == 'about me') {
-            scrollToSection(aboutMeKey);
-          } else {
-            scrollToSection(skillsKey);
-          }
-        },
+        onPressed: () => scrollToSection(key),
         child: Text(
           title,
           style: TextStyle(

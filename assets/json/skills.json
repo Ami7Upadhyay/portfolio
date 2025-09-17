@@ -1,0 +1,110 @@
+{
+  "skills": [
+    {
+      "header": "Languages & Frameworks",
+      "skills": [
+        "Flutter",
+        "Dart",
+        "Firebase",
+        "REST APIs",
+      ]
+    },
+    {
+      "header": "State Management",
+      "skills": [
+        "Provider",
+        "Riverpod",
+        "Bloc"
+      ]
+    },
+    {
+      "header": "Dependency Injection",
+      "skills": [
+        "GetIt",
+        "Injectable"
+      ]
+    },
+    {
+      "header": "Networking & API Handling",
+      "skills": [
+        "Dio",
+        "HTTP"
+      ]
+    },
+    {
+      "header": "Security",
+      "skills": [
+        "SSL Pinning",
+        "Encryption (AES, RSA)",
+        "Secure Storage",
+        "App Integrity Checks",
+        "Obfuscation/ProGuard"
+      ]
+    },
+    {
+      "header": "UI/UX",
+      "skills": [
+        "Custom UI Design",
+        "Material Design",
+        "Cupertino Widgets",
+        "Animations (Lottie)",
+        "MediaQuery",
+        "LayoutBuilder",
+        "AutoSizeText",
+        "Responsive Design"
+      ]
+    },
+    {
+      "header": "Agile Methodologies",
+      "skills": [
+        "Scrum",
+      ]
+    },
+    {
+      "header": "Version Control & Collaboration",
+      "skills": [
+        "GitHub",
+        "GitLab",
+        "Bitbucket",
+        "JIRA",
+        "Git Flow",
+        "Feature Branching",
+        "Code Reviews",
+      ]
+    },
+    {
+      "header": "Operating Systems",
+      "skills": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ]
+    },
+    {
+      "header": "IDEs",
+      "skills": [
+        "Android Studio",
+        "Xcode",
+        "VS Code",
+        "Sublime Text"
+      ]
+    },
+    {
+      "header": "Other Tools",
+      "skills": [
+        "Figma",
+        "Postman",
+        "Crashlytics",
+        "Analytics"
+      ]
+    },
+    {
+      "header": "Leadership & Architecture",
+      "skills": [
+        "Mentoring Junior Developers",
+        "Code Reviews & Best Practices",
+        "Architecting Scalable Flutter Apps"
+      ]
+    }
+  ]
+}
