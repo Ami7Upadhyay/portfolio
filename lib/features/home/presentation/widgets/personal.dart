@@ -62,7 +62,7 @@ class _PersonalState extends ConsumerState<Personal> {
             AppImageProvider.svgAsset(AppImages.logo, height: 34, width: 24),
             5.hPad,
             Text(
-              "Amit",
+              "Amit ",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
