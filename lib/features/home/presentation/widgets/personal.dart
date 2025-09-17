@@ -41,9 +41,9 @@ class _PersonalState extends ConsumerState<Personal> {
             AppImageProvider.svgAsset(AppImages.logo, height: 34, width: 24),
             5.hPad,
             Text(
-              "Personal",
+              "Amit",
               style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.w700),
             )
@@ -51,11 +51,11 @@ class _PersonalState extends ConsumerState<Personal> {
         ),
         Row(
           children: [
-            menuBtn("Home"),
-            menuBtn("About Me"),
-            menuBtn("Skill"),
-            menuBtn("Projects"),
-            menuBtn("Contact")
+            menuBtn("home"),
+            menuBtn("about me"),
+            menuBtn("skill"),
+            menuBtn("projects"),
+            menuBtn("contact")
           ],
         )
       ],
@@ -68,7 +68,7 @@ class _PersonalState extends ConsumerState<Personal> {
         child: Text(
           title,
           style: TextStyle(
-              color: Colors.black, fontSize: 15, fontWeight: FontWeight.w600),
+              color: Colors.white, fontSize: 15, fontWeight: FontWeight.w600),
         ));
   }
 }

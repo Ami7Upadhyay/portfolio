@@ -16,4 +16,14 @@ class AppImageProvider {
   static Widget lottieAsset(String asset) {
     return Lottie.asset(asset);
   }
+
+  static Widget assets(String assetName,
+      {BoxFit fit = BoxFit.cover, double? height, double? width}) {
+    return Image.asset(
+      assetName,
+      fit: fit,
+      height: height,
+      width: width,
+    );
+  }
 }
