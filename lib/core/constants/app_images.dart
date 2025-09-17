@@ -5,5 +5,6 @@ class AppImages {
   static String logo = 'logo'.toSvg;
   static String headerImg = 'desktop-img'.toSvg;
 
-  // PNGs or other types
+  // lottie Json
+  static String waving = "waving".toJson;
 }

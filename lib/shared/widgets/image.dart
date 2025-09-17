@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:lottie/lottie.dart';
 
 class AppImageProvider {
   static Widget svgAsset(String assetName,
@@ -10,5 +11,9 @@ class AppImageProvider {
       height: height,
       width: width,
     );
+  }
+
+  static Widget lottieAsset(String asset) {
+    return Lottie.asset(asset);
   }
 }

@@ -37,7 +37,7 @@ class _HeaderState extends ConsumerState<Header> {
             ),
           ),
           Flexible(
-              flex: 2, child: AppImageProvider.svgAsset(AppImages.headerImg))
+              flex: 2, child: AppImageProvider.lottieAsset(AppImages.waving))
         ],
       ),
     );

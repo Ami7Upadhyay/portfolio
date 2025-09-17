@@ -5,3 +5,7 @@ extension SvgPathExtension on String {
 extension PngPathExtension on String {
   String get toPng => 'assets/images/$this.png';
 }
+
+extension JsonPathExtension on String {
+  String get toJson => 'assets/json/$this.json';
+}
