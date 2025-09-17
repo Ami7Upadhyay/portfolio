@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/core/theme/app_colors.dart';
+import 'package:portfolio/core/utils/extensions/padding_extenstion.dart';
 
 import '../../../../core/constants/app_images.dart';
 import '../../../../shared/widgets/image.dart';
+
+final headerKey = GlobalKey();
 
 class Header extends ConsumerStatefulWidget {
   const Header({super.key});
@@ -16,14 +19,13 @@ class _HeaderState extends ConsumerState<Header> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 80, vertical: 60),
+      key: headerKey,
+      margin: EdgeInsets.symmetric(horizontal: 80, vertical: 62),
       child: Row(
         children: [
           Flexible(flex: 2, child: _buildContent()),
           Spacer(),
           Flexible(child: AppImageProvider.assets(AppImages.headerImg))
-          // Flexible(
-          //     flex: 2, child: AppImageProvider.lottieAsset(AppImages.waving))
         ],
       ),
     );
@@ -35,26 +37,10 @@ class _HeaderState extends ConsumerState<Header> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _name(),
+        15.vPad,
         _headline(),
+        32.vPad,
         _desc(),
-        // Text(
-        //   'Flutter ',
-        //   style: TextStyle(
-        //     color: Colors.black,
-        //     fontWeight: FontWeight.w700,
-        //     fontSize: 40,
-        //   ),
-        // ),
-        // Flexible(
-        //   child: StrokeText(
-        //     text: "Developer",
-        //     textStyle: TextStyle(fontSize: 40, color: Colors.white),
-        //     strokeColor: Colors.black,
-        //     strokeWidth: 2,
-        //   ),
-        // ),
-        // Flexible(
-        //     flex: 2, child: AppImageProvider.lottieAsset(AppImages.waving))
       ],
     );
   }
@@ -76,7 +62,7 @@ class _HeaderState extends ConsumerState<Header> {
 
   Widget _headline() {
     return Text(
-      "Flutter Developer | Cross-Platform Mobile Application Specialist",
+      "Flutter Developer | Cross-Platform App Expert",
       style: TextStyle(
           fontSize: 25, fontWeight: FontWeight.w400, color: AppColors.primary),
     );

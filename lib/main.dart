@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/core/theme/app_theme.dart';
 
 import 'features/home/presentation/home.dart';
 
@@ -17,12 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Amit Portfolio',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: Color(0xff282C33),
-        textTheme: GoogleFonts.firaCodeTextTheme(textTheme).copyWith(
-          bodyMedium: GoogleFonts.firaCode(textStyle: textTheme.bodyMedium),
-        ),
-      ),
+      theme: AppTheme.darkTheme,
       home: HomePage(),
     );
   }

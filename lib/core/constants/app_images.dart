@@ -6,6 +6,7 @@ class AppImages {
 
   // PNGs
   static String headerImg = 'header-img'.toPng;
+  static String aboutMeImg = 'about-me-img'.toPng;
 
   // lottie Json
   static String waving = "waving".toJson;

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/core/utils/extensions/padding_extenstion.dart';
+import 'package:portfolio/features/home/presentation/widgets/skills.dart';
 import 'package:portfolio/shared/widgets/image.dart';
 
 import '../../../../core/constants/app_images.dart';
+import 'about_me.dart';
 import 'header.dart';
 
 class Personal extends ConsumerStatefulWidget {
@@ -23,8 +25,16 @@ class _PersonalState extends ConsumerState<Personal> {
           children: [
             _appBar(),
             Expanded(
-                child: ListView(
-              children: [Header()],
+                child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Header(),
+                  106.vPad,
+                  AboutMe(),
+                  106.vPad,
+                  Skills(),
+                ],
+              ),
             ))
           ],
         ),
@@ -64,11 +74,30 @@ class _PersonalState extends ConsumerState<Personal> {
 
   Widget menuBtn(String title) {
     return TextButton(
-        onPressed: () {},
+        onPressed: () {
+          if (title == 'home') {
+            scrollToSection(headerKey);
+          } else if (title == 'about me') {
+            scrollToSection(aboutMeKey);
+          } else {
+            scrollToSection(skillsKey);
+          }
+        },
         child: Text(
           title,
           style: TextStyle(
               color: Colors.white, fontSize: 15, fontWeight: FontWeight.w600),
         ));
+  }
+
+  void scrollToSection(GlobalKey key) {
+    final currentContext = key.currentContext;
+    if (currentContext != null) {
+      Scrollable.ensureVisible(
+        currentContext,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeInOut,
+      );
+    }
   }
 }
