@@ -30,7 +30,9 @@ class _SkillsState extends State<TechnicalSkills> {
         await rootBundle.loadString('assets/json/skills.json');
     final SkillCategory skillsModel =
         SkillCategory.fromJson(json.decode(jsonString));
-    skillsCat = skillsModel.skills ?? [];
+    setState(() {
+      skillsCat = skillsModel.skills ?? [];
+    });
   }
 
   @override
@@ -53,7 +55,7 @@ class _SkillsState extends State<TechnicalSkills> {
         TitleHeader(title: 'skill'),
         Wrap(
             spacing: 16,
-            runSpacing: 10,
+            runSpacing: 30,
             children: skillsCat
                 .map((c) =>
                     SkillsTable(header: c.header ?? '', skills: c.skills ?? []))

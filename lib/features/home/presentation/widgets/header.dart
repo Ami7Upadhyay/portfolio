@@ -20,7 +20,7 @@ class _HeaderState extends ConsumerState<Header> {
       margin: EdgeInsets.symmetric(horizontal: 80, vertical: 62),
       child: Row(
         children: [
-          Flexible(flex: 2, child: _buildContent()),
+          Flexible(flex: 2, child: _buildContent(context)),
           // Spacer(),
           // Flexible(child: AppImageProvider.assets(AppImages.headerImg))
           // Flexible(child: AppImageProvider.lottieAsset(AppImages.waving))
@@ -29,7 +29,7 @@ class _HeaderState extends ConsumerState<Header> {
     );
   }
 
-  Widget _buildContent() {
+  Widget _buildContent(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,36 +37,57 @@ class _HeaderState extends ConsumerState<Header> {
         _name(),
         15.vPad,
         _headline(),
-        32.vPad,
-        _desc(),
+        15.vPad,
+        _desc(context),
       ],
     );
   }
 
   Widget _name() {
-    return Text.rich(TextSpan(
-        text: "Hello I am ",
-        style: TextStyle(
-            fontSize: 32, fontWeight: FontWeight.w500, color: Colors.white),
-        children: [
-          TextSpan(
-              text: "Amit Upadhyay",
-              style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.primary))
-        ]));
-  }
-
-  Widget _headline() {
-    return Text(
-      "Flutter Developer | Cross-Platform App Expert",
-      style: TextStyle(
-          fontSize: 25, fontWeight: FontWeight.w400, color: AppColors.primary),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Hi my name is",
+          style: TextStyle(
+              fontSize: 20, fontWeight: FontWeight.w400, color: Colors.white),
+        ),
+        Text(
+          "Amit Upadhyay",
+          style: TextStyle(
+              fontSize: 50,
+              fontWeight: FontWeight.w400,
+              color: AppColors.primary),
+        )
+      ],
     );
   }
 
-  Widget _desc() {
+  Widget _headline() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "I craft smart, cross-platform",
+          style: TextStyle(
+              fontSize: 40,
+              fontWeight: FontWeight.w400,
+              color: AppColors.primary),
+        ),
+        Text(
+          "app using Flutter",
+          style: TextStyle(
+              fontSize: 40,
+              fontWeight: FontWeight.w400,
+              color: AppColors.primary),
+        ),
+      ],
+    );
+  }
+
+  Widget _desc(BuildContext context) {
     return Text(
       "Experienced in designing, developing, and maintaining high-performance "
       "Flutter apps that deliver consistent experiences across iOS and Android.",
